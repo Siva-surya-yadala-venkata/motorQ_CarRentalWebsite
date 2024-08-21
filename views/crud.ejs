@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Inventory Management & Rental System</title>
+    <link rel="stylesheet" href="crud.css">
+</head>
+<body>
+    <h1>Car Inventory Management</h1>
+<div>
+
+    <% if(locals.info) {%>
+        <%= info  %>
+        <% } %>
+
+    </div>
+
+    <!-- Form to Add a New Car -->
+    <form action="/send" method="POST">
+        <input type="text" id="make" name="make" placeholder="Make" >
+        <input type="text" id="model" name="model" placeholder="Model" >
+        <input type="number" id="year" name="year" placeholder="Year" >
+        <input type="text" id="registrationNumber" name="registrationNumber" placeholder="Registration Number" >
+        <input type="text" id="fuelType" name="fuelType" placeholder="Fuel Type" >
+        <input type="number" id="rent" name="rent" placeholder="Rent per Day" >
+        <button type="submit">Add Car</button>
+    </form>
+
+    <!-- Display Car Inventory -->
+    <h2>Car Inventory</h2>
+    <table id="car-table">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Registration Number</th>
+                <th>Fuel Type</th>
+                <th>Rent</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Car details will be added here -->
+        </tbody>
+    </table>
+
+    <h2>Car Rental Booking</h2>
+
+    <!-- Filter Options -->
+    <form id="filter-form">
+        <input type="text" id="searchMMY" placeholder="Search by Make/Model/Year">
+        <input type="text" id="searchRegistrationNumber" placeholder="Search by Registration Number">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Available Cars -->
+    <table id="available-cars">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Registration Number</th>
+                <th>Fuel Type</th>
+                <th>Rent</th>
+                <th>Select</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Available cars will be displayed here -->
+        </tbody>
+    </table>
+
+    <script src="main1.js"></script>
+</body>
+</html>
